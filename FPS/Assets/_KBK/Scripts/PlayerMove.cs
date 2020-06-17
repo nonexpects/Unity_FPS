@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+
         //대각선 이동처리 
         Vector3 movement = new Vector3(h, 0, v);
         //공중에 뜨는건 y값을 처리해줘야됨. (중력 필요)

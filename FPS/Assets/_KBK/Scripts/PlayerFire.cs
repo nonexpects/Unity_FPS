@@ -8,6 +8,8 @@ public class PlayerFire : MonoBehaviour
     public GameObject fireFx;
     public GameObject bulletPrefab;
     public GameObject bombPrefab;
+    public Transform firePoint;
+
     Rigidbody bombRg;
     Ray ray;
     RaycastHit hit;
@@ -46,7 +48,7 @@ public class PlayerFire : MonoBehaviour
             //레이랑 충돌했냐?
             if(Physics.Raycast(ray, out hit))
             {
-                print("충돌오브젝트 : " + hit.collider.name);
+                //print("충돌오브젝트 : " + hit.collider.name);
 
                 //호출 시점에 총알 이펙트 생성
                 GameObject fx = Instantiate(fireFx);
@@ -92,7 +94,7 @@ public class PlayerFire : MonoBehaviour
 
             GameObject bomb = Instantiate(bombPrefab);
             //폭탄 플레이어가 던지기 떄문에 폭탄의 리지드 바디를 이욯해서 던지면 된다
-            bomb.transform.position = transform.position;
+            bomb.transform.position = firePoint.position;
             //전방으로 물리적인 힘을 가한다
             Rigidbody rg = bomb.GetComponent<Rigidbody>();
             //rg.AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);

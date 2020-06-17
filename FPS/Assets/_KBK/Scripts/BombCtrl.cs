@@ -28,13 +28,6 @@ public class BombCtrl : MonoBehaviour
         //    
         //}
     }
-
-    private void Explosion()
-    {
-        
-
-    }
-
     //충돌처리
     private void OnCollisionEnter(Collision collision)
     {
