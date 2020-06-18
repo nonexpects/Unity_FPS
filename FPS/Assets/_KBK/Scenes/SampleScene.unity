@@ -529,6 +529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 840503208}
+  findRange: 10
+  moveRange: 25
+  attackRange: 2
 --- !u!143 &738132401
 CharacterController:
   m_ObjectHideFlags: 0

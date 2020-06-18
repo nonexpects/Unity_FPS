@@ -50,6 +50,12 @@ public class PlayerFire : MonoBehaviour
             {
                 //print("충돌오브젝트 : " + hit.collider.name);
 
+                //내 총알에 충돌했으니 몬스터 체력 깎기
+                EnemyFSM enemy = hit.collider.GetComponent<EnemyFSM>();
+                enemy.hitDamage(5);
+                //hit.collider.gameObject.GetComponent<EnemyFSM>().hitDamage(10);
+                //hit.transform.GetComponent<EnemyFSM>().hitDamage(10);
+
                 //호출 시점에 총알 이펙트 생성
                 GameObject fx = Instantiate(fireFx);
                 //부딪힌 지점의 정보는 hit안에 있다
